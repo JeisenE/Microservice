@@ -13,7 +13,7 @@ import java.util.Map;
 public class UserController {
     @Autowired private UserService userService;
 
-    @GetMapping("/me")
+    @GetMapping("/me") 
     public ResponseEntity<?> me(Authentication authentication) {
         if (authentication == null) return ResponseEntity.status(401).build();
 
