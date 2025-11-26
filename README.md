@@ -1,4 +1,4 @@
-```markdown
+
 # Microservices API for Authentication & User Management
 
 A simple backend microservices-style application built with Java Spring Boot, implementing manual JWT authentication and secure password hashing using BCrypt.
