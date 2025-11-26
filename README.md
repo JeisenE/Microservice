@@ -177,7 +177,7 @@ Use Postman, Thunder Client, or curl:
 2. Use the token in secured endpoints:
 
 ```
-Authorization: Bearer <your_token_here>
+Authorization: Bearer <jwt_token>
 ```
 
 Endpoints requiring token:
