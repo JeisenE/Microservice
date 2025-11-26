@@ -181,20 +181,6 @@ Endpoints requiring token:
 
 ---
 
-## Project Structure
-
-```
-/src
- ├─ controller
- ├─ entity
- ├─ repository
- ├─ service
- ├─ security
- └─ MainApplication.java
-```
-
----
-
 ## Notes
 - JWT is generated manually using a utility class.  
 - Passwords are securely stored using BCrypt.  
