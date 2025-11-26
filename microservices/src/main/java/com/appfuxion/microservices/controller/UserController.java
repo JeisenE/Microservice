@@ -30,9 +30,7 @@ public class UserController {
         @RequestBody User updated,
         Authentication authentication) {
         String requestEmail = authentication.getName();
-        Long requestId = userService.findByEmail(requestEmail)
-                                    .map(User::getId)
-                                    .orElseThrow();
+        Long requestId = userService.findByEmail(requestEmail).map(User::getId).orElseThrow();
         if (!requestId.equals(id)) {
             return ResponseEntity.status(403).body(Map.of("error", "Forbidden"));
         }

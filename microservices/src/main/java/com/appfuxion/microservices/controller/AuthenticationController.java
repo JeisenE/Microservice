@@ -39,16 +39,13 @@ public class AuthenticationController {
         if (option.isEmpty()) {
             option = userRepository.findByEmail(identifier);
         }
-
         if (option.isEmpty()) {
             return ResponseEntity.status(401).body(Map.of("error", "Invalid credentials"));
         }
-
         User user = option.get();
         if (!userService.checkPassword(password, user.getPassword())) {
             return ResponseEntity.status(401).body(Map.of("error", "Invalid credentials"));
         }
-
         String token = jwtUtil.generateToken(user.getEmail());
         return ResponseEntity.ok(Map.of("token", token));
     }

@@ -42,7 +42,6 @@ public class UserService {
 
     public User updateProfile(Long id, User updated) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("No_Found"));
-
         user.setName(updated.getName());
         user.setAddress(updated.getAddress());
         user.setAge(updated.getAge());
@@ -52,7 +51,6 @@ public class UserService {
             }
             user.setEmail(updated.getEmail());
         }
-
         return userRepository.save(user);
     }
 
