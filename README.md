@@ -46,7 +46,7 @@ CREATE DATABASE microservice_db;
 Update your `application.properties`:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/microservice_db
+spring.datasource.url=jdbc:mysql://localhost:3306/microservices_auth_user
 spring.datasource.username=root
 spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
