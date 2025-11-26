@@ -74,7 +74,7 @@ mvn spring-boot:run
 ---
 
 ## 1. Register User  
-**POST** `/users/register`
+**POST** `/authentication/register`
 
 ### Request Body
 ```json
@@ -89,24 +89,24 @@ mvn spring-boot:run
 ### Example Response
 ```json
 {
-  "message": "User registered successfully",
-  "user": {
-    "id": 1,
-    "name": "Jeisen",
-    "email": "jeisen@gmail.com"
-  }
+  "id": 1,
+  "username": "jeisen123",
+  "email": "jeisen@gmail.com",
+  "name": "Jeisen",
+  "age": 22,
+  "address": null
 }
 ```
 
 ---
 
 ## 2. Login User  
-**POST** `/auth/login`
+**POST** `/authentication/login`
 
 ### Request Body
 ```json
 {
-  "email": "jason@gmail.com",
+  "identifier": "jeisen@gmail.com",
   "password": "123456"
 }
 ```
@@ -114,12 +114,7 @@ mvn spring-boot:run
 ### Example Response
 ```json
 {
-  "token": "<jwt_token>",
-  "user": {
-    "id": 1,
-    "name": "Jeisen",
-    "email": "jeisen@gmail.com"
-  }
+  "token": "<jwt_token>"
 }
 ```
 
@@ -157,13 +152,12 @@ mvn spring-boot:run
 ### Example Response
 ```json
 {
-  "message": "Profile updated",
-  "user": {
-    "id": 1,
-    "name": "Jason Updated",
-    "email": "jason_updated@gmail.com",
-    "age": 23
-  }
+  "id": 1,
+  "username": "jeisen123",
+  "email": "jason_updated@gmail.com",
+  "name": "Jason Updated",
+  "age": 23,
+  "address": null
 }
 ```
 
@@ -205,4 +199,3 @@ Endpoints requiring token:
 - JWT is generated manually using a utility class.  
 - Passwords are securely stored using BCrypt.  
 - All protected routes validate the JWT token before processing the request.  
-```
