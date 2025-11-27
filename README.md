@@ -74,7 +74,7 @@ mvn spring-boot:run
 ---
 
 ## 1. Register User  
-**POST** `/authentication/register`
+**POST** `/users/register`
 
 ### Request Body
 ```json
