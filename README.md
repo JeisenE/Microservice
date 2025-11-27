@@ -29,7 +29,7 @@ The system uses **JWT-based Authentication**, passwords are hashed using BCrypt,
 ---
 
 ## Prerequisites
-- Java 17  
+- Java 21  
 - Maven 3.x  
 - MySQL  
 
@@ -40,7 +40,7 @@ The system uses **JWT-based Authentication**, passwords are hashed using BCrypt,
 Create a database:
 
 ```sql
-CREATE DATABASE microservice_db;
+CREATE DATABASE microservice_auth_user;
 ```
 
 Update your `application.properties`:
