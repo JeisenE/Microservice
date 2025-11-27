@@ -20,17 +20,6 @@ public class AuthenticationController {
     @Autowired private JwtUtil jwtUtil;
     @Autowired private UserRepository userRepository;
 
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody User payload) {
-        if (payload == null || payload.getPassword() == null ||
-            payload.getUsername() == null || payload.getEmail() == null) {
-            return ResponseEntity.badRequest().body(Map.of("error", "Missing required fields"));
-        }
-        User created = userService.register(payload);
-        created.setPassword(null);
-        return ResponseEntity.ok(created);
-    }
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String,String> body) {
         String identifier = body.get("identifier");
